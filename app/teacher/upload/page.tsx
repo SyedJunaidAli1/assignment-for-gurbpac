@@ -119,8 +119,8 @@ export default function UploadPage() {
                 <CardDescription>JPG, PNG, GIF (Max 10MB)</CardDescription>
               </CardHeader>
               <CardContent>
-                <div 
-                  {...getRootProps()} 
+                <div
+                  {...getRootProps()}
                   className={`
                     relative cursor-pointer rounded-xl border-2 border-dashed transition-all duration-200
                     ${isDragActive ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'}
@@ -128,7 +128,7 @@ export default function UploadPage() {
                   `}
                 >
                   <input {...getInputProps()} />
-                  
+
                   {preview ? (
                     <div className="group relative w-full h-full">
                       <img src={preview} alt="Preview" className="w-full h-full object-cover rounded-lg" />
@@ -159,13 +159,13 @@ export default function UploadPage() {
                   )}
                 </div>
                 {file && (
-                   <div className="mt-4 flex items-center gap-2 p-3 bg-muted rounded-lg border border-border">
-                     <FileImage className="h-4 w-4 text-primary" />
-                     <span className="text-xs truncate font-medium">{file.name}</span>
-                     <span className="text-[10px] text-muted-foreground ml-auto">
-                       {(file.size / 1024 / 1024).toFixed(2)} MB
-                     </span>
-                   </div>
+                  <div className="mt-4 flex items-center gap-2 p-3 bg-muted rounded-lg border border-border">
+                    <FileImage className="h-4 w-4 text-primary" />
+                    <span className="text-xs truncate font-medium">{file.name}</span>
+                    <span className="text-[10px] text-muted-foreground ml-auto">
+                      {(file.size / 1024 / 1024).toFixed(2)} MB
+                    </span>
+                  </div>
                 )}
               </CardContent>
             </Card>
@@ -203,11 +203,11 @@ export default function UploadPage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="description">Description (Optional)</Label>
-                  <Textarea 
-                    id="description" 
-                    placeholder="Briefly describe the content..." 
+                  <Textarea
+                    id="description"
+                    placeholder="Briefly describe the content..."
                     className="h-24 resize-none"
-                    {...register('description')} 
+                    {...register('description')}
                   />
                 </div>
 
@@ -215,11 +215,11 @@ export default function UploadPage() {
                   <div className="space-y-2">
                     <Label htmlFor="startTime">Start Time</Label>
                     <div className="relative">
-                      <Input 
-                        id="startTime" 
-                        type="datetime-local" 
+                      <Input
+                        id="startTime"
+                        type="datetime-local"
                         className="pl-10"
-                        {...register('startTime')} 
+                        {...register('startTime')}
                       />
                       <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     </div>
@@ -228,11 +228,11 @@ export default function UploadPage() {
                   <div className="space-y-2">
                     <Label htmlFor="endTime">End Time</Label>
                     <div className="relative">
-                      <Input 
-                        id="endTime" 
-                        type="datetime-local" 
+                      <Input
+                        id="endTime"
+                        type="datetime-local"
                         className="pl-10"
-                        {...register('endTime')} 
+                        {...register('endTime')}
                       />
                       <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     </div>
@@ -242,19 +242,19 @@ export default function UploadPage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="rotationDuration">Rotation Duration (Seconds)</Label>
-                  <Input 
-                    id="rotationDuration" 
-                    type="number" 
-                    {...register('rotationDuration', { valueAsNumber: true })} 
+                  <Input
+                    id="rotationDuration"
+                    type="number"
+                    {...register('rotationDuration', { valueAsNumber: true })}
                   />
                   <p className="text-[10px] text-muted-foreground">How long this item stays on screen during the broadcast loop.</p>
                   {errors.rotationDuration && <p className="text-xs text-destructive">{errors.rotationDuration.message}</p>}
                 </div>
               </CardContent>
               <CardFooter className="bg-muted/30 pt-6">
-                <Button 
-                  type="submit" 
-                  className="w-full h-11" 
+                <Button
+                  type="submit"
+                  className="w-full h-11"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
