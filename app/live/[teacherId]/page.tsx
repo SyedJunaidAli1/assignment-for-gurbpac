@@ -24,7 +24,7 @@ export default function PublicLivePage() {
   const { data: activeContent, isLoading, isError } = useQuery({
     queryKey: ['activeContent', teacherId],
     queryFn: () => contentService.getActiveContent(teacherId as string),
-    refetchInterval: 10000, // 10 second polling
+    refetchInterval: 2000, // 2 second polling for smooth rotation
   });
 
   if (isLoading) {
