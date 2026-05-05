@@ -58,6 +58,13 @@ A professional Content Broadcasting System built with Next.js, TypeScript, and s
 
 ## Documentation
 See [Frontend-notes.txt](./Frontend-notes.txt) for detailed architectural decisions.
+
+## Testing the Live System
+
+To test the end-to-end broadcast flow:
+1. **Teacher Upload**: Login as `teacher@school.com` (pass: `password123`). Upload an image and set the schedule to include the **current time**.
+2. **Principal Approval**: Login as `principal@school.com` (pass: `password123`). Go to "Pending Approvals" and approve the content.
+3. **Student View**: Visit [http://localhost:3000/live/1](http://localhost:3000/live/1) to see the live broadcast.
 sources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.

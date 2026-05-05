@@ -37,4 +37,8 @@ The project follows a root-level architecture for clarity and scalability:
 6. Assumptions
 - Content data is persisted in `localStorage` for the duration of the browser session (simulating a backend).
 - Files are "uploaded" via `URL.createObjectURL` to show previews and simulate live broadcasting.
-- Dark mode is implemented using `next-themes` and shadcn's standard variables.
+7. Testing Instructions
+- Login as Teacher (`teacher@school.com` / `password123`).
+- Upload content with a schedule covering the current time.
+- Login as Principal (`principal@school.com` / `password123`) and Approve.
+- View the live broadcast at `/live/1`.
