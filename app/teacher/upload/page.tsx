@@ -27,7 +27,7 @@ const uploadSchema = z.object({
   description: z.string().optional(),
   startTime: z.string().min(1, 'Start time is required'),
   endTime: z.string().min(1, 'End time is required'),
-  rotationDuration: z.coerce.number().min(5, 'Minimum 5 seconds'),
+  rotationDuration: z.number().min(5, 'Minimum 5 seconds'),
 }).refine((data) => new Date(data.endTime) > new Date(data.startTime), {
   message: "End time must be after start time",
   path: ["endTime"],
@@ -245,7 +245,7 @@ export default function UploadPage() {
                   <Input 
                     id="rotationDuration" 
                     type="number" 
-                    {...register('rotationDuration')} 
+                    {...register('rotationDuration', { valueAsNumber: true })} 
                   />
                   <p className="text-[10px] text-muted-foreground">How long this item stays on screen during the broadcast loop.</p>
                   {errors.rotationDuration && <p className="text-xs text-destructive">{errors.rotationDuration.message}</p>}
