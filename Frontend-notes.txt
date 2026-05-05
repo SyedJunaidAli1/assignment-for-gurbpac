@@ -1,0 +1,40 @@
+Project: Content Broadcasting System Frontend
+Author: Antigravity
+
+1. Project Structure
+The project follows a root-level architecture for clarity and scalability:
+- /app: Next.js App Router (Pages & Layouts)
+- /components: Reusable UI components powered by shadcn/ui
+- /services: Dedicated service layer for API calls (simulated with localStorage)
+- /hooks: Custom hooks for shared logic
+- /context: AuthContext for state management
+- /types: TypeScript interfaces and types
+- /lib: Utility functions and configurations
+
+2. Authentication Flow
+- Mock authentication using `auth.service.ts`.
+- Valid credentials:
+  - Teacher: teacher@school.com / password123
+  - Principal: principal@school.com / password123
+- Tokens and user data are stored in `localStorage`.
+- `AuthContext` provides global access to user state and handles role-based redirection.
+
+3. Role-Based Routing
+- Layout-based protection: `TeacherLayout` and `PrincipalLayout` verify user roles and redirect to `/login` if unauthorized.
+- Automatic redirection from the root page (`/`) based on authentication status and role.
+
+4. API Integration Approach
+- Axios instance configured in `services/api.ts`.
+- Modular services (`auth`, `content`, `approval`) encapsulate all data fetching logic.
+- TanStack Query used for state synchronization, caching, and polling (especially on the Public Live Page).
+
+5. State Management Approach
+- Minimal and distributed:
+  - Global: AuthContext (Auth state).
+  - Server State: TanStack Query (Data fetching & caching).
+  - Local: React Hook Form (Form state) and useState (UI toggles).
+
+6. Assumptions
+- Content data is persisted in `localStorage` for the duration of the browser session (simulating a backend).
+- Files are "uploaded" via `URL.createObjectURL` to show previews and simulate live broadcasting.
+- Dark mode is implemented using `next-themes` and shadcn's standard variables.

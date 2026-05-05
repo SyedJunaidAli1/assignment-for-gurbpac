@@ -1,33 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Content Broadcasting System Frontend
 
-## Getting Started
+A professional Content Broadcasting System built with Next.js, TypeScript, and shadcn/ui. Designed for educational environments to manage and broadcast content to students.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Authentication**: Role-based login for Teachers and Principals.
+- **Teacher Dashboard**: Upload subject-based content with scheduling and file previews.
+- **Principal Dashboard**: Comprehensive workflow to approve or reject content with reasons.
+- **Live Broadcast Page**: A public-facing live page (`/live/:teacherId`) that automatically displays approved content during its scheduled window.
+- **Dark Mode**: High-fidelity dark mode support using shadcn/ui.
+- **Responsive Design**: Fully functional on mobile, tablet, and desktop devices.
+- **Rich Aesthetics**: Smooth animations (Framer Motion) and premium UI components.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: TypeScript
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
+- **State Management**: [TanStack Query](https://tanstack.com/query/latest) + React Context
+- **Forms**: React Hook Form + Zod
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: Lucide React
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup Instructions
 
-## Learn More
+### Prerequisites
+- [Bun](https://bun.sh/) (Recommended) or Node.js
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
+1. Install dependencies:
+   ```bash
+   bun install
+   ```
+
+### Running Locally
+1. Start the development server:
+   ```bash
+   bun run dev
+   ```
+2. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Demo Credentials
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Teacher** | `teacher@school.com` | `password123` |
+| **Principal** | `principal@school.com` | `password123` |
+
+## Project Structure
+
+- `app/`: Next.js pages and layouts.
+- `components/`: UI components and common patterns.
+- `services/`: API abstraction layer.
+- `context/`: Authentication state management.
+- `types/`: Type definitions for content and users.
+- `lib/`: Configuration and utility functions.
+
+## Documentation
+See [Frontend-notes.txt](./Frontend-notes.txt) for detailed architectural decisions.
+sources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
